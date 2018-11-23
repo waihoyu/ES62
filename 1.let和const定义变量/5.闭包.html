@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+<script>
+    let list = document.getElementById("list").getElementsByTagName("li")
+
+    for(var i =0;i<list.length;i++){
+        (function (i) {
+            list[i].onclick = function () {
+                alert(i)
+            }
+        })(i)
+
+    }
+    console.log(i)
+
+
+</script>
+</body>
+</html>
