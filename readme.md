@@ -108,3 +108,45 @@
     }())] =[1]
     console.log(x1, x2);
 
+省略赋值
+
+    let [,,m2] = [1,2,3]
+    console.log(m2)
+
+
+不定参数赋值
+
+    let [y1,y2,...y3]=[1,2,3,4,5]
+    console.log(y3)
+
+### 对象的解构赋值
+
+如果变量名和属性名一样的，可以直接省略写法
+
+    let {name,age} = {name:'waihoyu',age:10}
+    let {name:name,age:age} = {name:'waihoyu',age:10}
+    let {name:name,age=100} = {name:'waihoyu',age:undefined}
+    let {name:name,age=100,list:[a1,a2,a3,a4]} = {name:'waihoyu',age:undefined,list:["js","node","vue","react"]}
+    
+    let x1,x2;
+    [x1,x2] =[1,2]
+    ({x1,x2}) =[1,2]
+
+
+### 其他数据类型解构赋值
+
+使用数组的解构赋值的形式，如果等号右边不是一个数组，默认将其转换为数组（类似数组的对象，必须有一个length属性）
+
+    let [x,y]="123";
+    console.log(x.y)
+
+使用对象的解构赋值的形式，如果等号右边不是对象，默认转为对象
+
+    let {a} = 1
+    let {__proto__:a} = 1
+    console.log(a)
+    console.log(Object(1))  
+    
+    let {length:b}="1234"
+    console.log(Object("1234"))
+    console.log(b)
