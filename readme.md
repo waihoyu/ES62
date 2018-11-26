@@ -11,7 +11,6 @@
 
 4、用var 声明的变量还会挂到window下面。
 
-    
 #### let关键字
 
 1、没有变量提升
@@ -19,7 +18,6 @@
 2、不可以重复声明
 
 3、不会给window上增加属性
-
 
 
 ### const 关键字
@@ -74,7 +72,6 @@
     }
     console.log(i)
 
-
 //闭包
 
     let list = document.getElementById("list").getElementsByTagName("li")
@@ -113,7 +110,6 @@
     let [,,m2] = [1,2,3]
     console.log(m2)
 
-
 不定参数赋值
 
     let [y1,y2,...y3]=[1,2,3,4,5]
@@ -150,3 +146,83 @@
     let {length:b}="1234"
     console.log(Object("1234"))
     console.log(b)
+
+### 字符串的扩展
+
+    console.log(String.prototype);
+    1、 includes  返回值布尔  true  fasle
+    判断字符串中有没有指定字符
+    includes("指定字符",开始查找的位置)
+    Number() 转成数字
+    let str = "abcd";
+    console.log(str.includes("a",undefined));
+    
+    2.startsWith  endsWith 判断字符串是不是以指定字符作为开头
+    startsWith("指定字符",开始查找的位置（可选）)
+    str.startsWith("a",3) 
+    
+    endsWith 判断指定字符是不是以指定字符作为结尾。
+    endsWith("指定字符",num)
+    num:从前num个中查看
+    
+    3.repeat  复制  重复多少次
+    
+    repeat(num) 将字符串重复num
+    
+    num 取整，不可以是负数或者Infinity
+    
+    负数报错  小数取整
+    
+    0到-1 之间 取整  0
+    
+    padStart  这是ES7中的，padEnd
+    
+    是用来补全我们的字符串的 按照指定字符补全字符串的指定长度
+    
+    参数 1. 长度  length  2.  指定字符
+    
+    padStart(Length,"指定字符")
+    
+    let str1 = "ab"
+    
+    str1.padStart(5,"g")
+    
+    str1.padEnd(7,"gbk")
+    
+### 字符串的模板
+    
+        //跟普通字符串一样使用，但是他可以添加变量
+    
+        let str = `哈哈`
+    
+    
+### 字符串的模板
+        
+    
+    
+       
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
