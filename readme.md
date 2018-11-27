@@ -196,23 +196,157 @@
         let str = `哈哈`
     
     
-### 字符串的模板
-        
+### Array类上的扩展
+
+
+    console.log(Array);
+    // Array 类是一个函数，  返回一个数组
+    // Array(x,y,z) 将参数变成一个数组返回
+    // 注意：只有一个参数并且参数是个数字n,返回有n个空位的数组
+
+    console.log(Array("1"))
+    console.log(Array(7))
+
+    // 跟Array一样的，唯一不同的是, 参数是一个数字的时候返回任意是一个项的数组
+    Array.of()
+
+    // 返回一个数组，（数组或类数组）
+    Array.from()
+
+### 数组原型上的扩展方法      
+           
+        console.log(Array.prototype)
+        //copyWithin  从原数组中 读取 内容 替换数组的指定位置的内容
+        // 参数 （替换的目标起始位置target,查找的起始位置begin, 查找的结束位置end,默认到末尾位置）
+        //原数组的length不变，如果有超过部分会被截取掉
+        let ary1 = [1,2,3,4,5,6,7,8]
     
+        console.log(ary1.copyWithin(4, 2, 4));
     
+        //fill 按照指定字符填充数组
+        //将数组的没有一项都变成指定字符
+        ary1.fill("test")
+        //将数组的索引3,4 位置替换成“test”
+        ary1.fill("test",3,5)
+        //filter 变量数组  根据返回值去过滤原数组
+    
+        let ary3 = ["test",1,2,3,"珠峰"]
+    
+        ary3.filter(function (item,index) {
+        //如果返回true就留下当前项，返回false 不留下当前项
+            return typeof item === "number"
+        })
+    
+        //find  先遍历数组 一旦参数函数返回true  停止查找  返回当前项
+    
+        let a = ary3.find(function (item) {
+            return typeof item === "number"
+        })
+    
+        //find findIndex
+        // findIndex  先遍历数组， 一旦参数函数返回true,停止查找，返回当前项的索引
+        // 只会查找一个
+    
+        //includes  判断数组中有没有某一项
+        [1,2,3].includes(1)
+    
+        //every  某一个 遍历数组 如果每一项都返回true，最后结果为true，只要有一个为false 结果就是false
+        [1,2,3,4,5].every(function (item) {
+            return typeof  item === 'number'
+        })
+    
+        //some  只有有一项是true ,最后结果就是true
+    
+        //reduce
+        //     迭代
+        let ary4 = [1,2,3,4,5]
+        ary4.reduce(function (prev,item) {
+            //prev  前一项的返回值  item  当前项
+             return prev + item ;
+    
+        },10)
+    
+        //reduceRight  跟reduce 一样，只是顺序是从右边开始
+    
+        //keys  提供了遍历接口 每一项的一个接口  使用for of 遍历
+    
+        let ary5 = [1,2,3,4]
+        for (let key of ary5.keys()) {
+            // key 索引
+            console.log(key);
+        }
+        // 默认使用 for of 遍历数组  默认遍历的就是每一项
+    
+        //enteries  遍历接口  可以遍历到索引和每一项
+    
+        for(let [index,item] of ary5.entries()){
+            console.log(e)
+            console.log();
+        }
+        //遍历数组的方法  参数是一个函数，这个函数中的this是window，我们可以通过第二个参数改变
+     
+### 数组的空位 
+
+    
+    //数组空位  数组的某个索引位置没有任何值  undefined 不是空位
+    // 判断一个数组中某一个位置是不是空位  in
+    //in 判断数组索引位置上有没有值
+    let arr = [,,,]
+    console.log(arr.length);
+    //在ES5中数组方法对空位的处理不一致，一般直接跳过空位
+    //在ES6中的方法将空位处理为undefined
+    
+    let arr1 = [1,2,,,,,3]
+    arr1.filter(function (item){
+        console.log(item)
+    })
+    
+    for(let item of arr1){
+        console.log(item)
+    }
+
+    for(let key in arr1){
+        console.log(key)
+    }
+    
+    //面试题
+
+
+
+### 函数的扩展
+    
+       function fn() {
+   
+       }
+   
+       // /参数使用解构赋值
+       function fn1({name,age}={name:"test",age:"100"}){
+           console.log(name ,age)
+       }
+   
+       //length 属性  形参的个数，如果形参有默认值，length就会失真，变成没有默认值
+   
+       function fn2(x,y) {
+           x = x||"test"
+           y = y|| "test"
+       }
+       function fn3() {
+   
+       }
        
+       
+        // 1.通过bind方法得到一个新的函数name 是“bound”原来函数的名字
     
+        let fn1 = fn.bind(null)
+        console.log(fn1.name);
+        2.通过构造函数方式创建一个函数
+        new Function()
+        let fn2 = new Function("x,y","console.log(x,y);return x + y")
     
-    
-
-
-
-
-
-
-
-
-
+        console.log(fn2.name);
+        let str = '[{"name":"test"},{"age":100}]'
+        let arr = (new Function("return " + str))()
+        console.log(arr); 
 
 
 

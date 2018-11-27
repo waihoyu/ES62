@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    function fn() {
+
+    }
+
+    // /参数使用解构赋值
+    function fn1({name,age}={name:"test",age:"100"}){
+        console.log(name ,age)
+    }
+
+    //length 属性  形参的个数，如果形参有默认值，length就会失真，变成没有默认值
+
+    function fn2(x,y) {
+        x = x||"test"
+        y = y|| "test"
+    }
+    // 参数默认值  一般参数的默认值放在最后面
+
+    function fn3(x=10,y=20) {
+
+    }
+    // fn2(,1) 会报错
+    function fn4(...agr) {
+
+    }
+
+
+</script>
+</body>
+</html>

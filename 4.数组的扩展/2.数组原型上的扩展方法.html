@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组原型上的扩展方法 </title>
+</head>
+<body>
+
+<script>
+    console.log(Array.prototype)
+    //copyWithin  从原数组中 读取 内容 替换数组的指定位置的内容
+    // 参数 （替换的目标起始位置target,查找的起始位置begin, 查找的结束位置end,默认到末尾位置）
+    //原数组的length不变，如果有超过部分会被截取掉
+    let ary1 = [1,2,3,4,5,6,7,8]
+
+    console.log(ary1.copyWithin(4, 2, 4));
+
+    //fill 按照指定字符填充数组
+    //将数组的没有一项都变成指定字符
+    ary1.fill("test")
+    //将数组的索引3,4 位置替换成“test”
+    ary1.fill("test",3,5)
+    //filter 变量数组  根据返回值去过滤原数组
+
+    let ary3 = ["test",1,2,3,"珠峰"]
+
+    ary3.filter(function (item,index) {
+    //如果返回true就留下当前项，返回false 不留下当前项
+        return typeof item === "number"
+    })
+
+    //find  先遍历数组 一旦参数函数返回true  停止查找  返回当前项
+
+    let a = ary3.find(function (item) {
+        return typeof item === "number"
+    })
+
+    //find findIndex
+    // findIndex  先遍历数组， 一旦参数函数返回true,停止查找，返回当前项的索引
+    // 只会查找一个
+
+    //includes  判断数组中有没有某一项
+    [1,2,3].includes(1)
+
+    //every  某一个 遍历数组 如果每一项都返回true，最后结果为true，只要有一个为false 结果就是false
+    [1,2,3,4,5].every(function (item) {
+        return typeof  item === 'number'
+    })
+
+    //some  只有有一项是true ,最后结果就是true
+
+    //reduce
+    //     迭代
+    let ary4 = [1,2,3,4,5]
+    ary4.reduce(function (prev,item) {
+        //prev  前一项的返回值  item  当前项
+         return prev + item ;
+
+    },10)
+
+    //reduceRight  跟reduce 一样，只是顺序是从右边开始
+
+    //keys  提供了遍历接口 每一项的一个接口  使用for of 遍历
+
+    let ary5 = [1,2,3,4]
+    for (let key of ary5.keys()) {
+        // key 索引
+        console.log(key);
+    }
+    // 默认使用 for of 遍历数组  默认遍历的就是每一项
+
+    //enteries  遍历接口  可以遍历到索引和每一项
+
+    for(let [index,item] of ary5.entries()){
+        console.log(e)
+        console.log();
+    }
+    //遍历数组的方法  参数是一个函数，这个函数中的this是window，我们可以通过第二个参数改变
+
+
+
+
+</script>
+</body>
+</html>
