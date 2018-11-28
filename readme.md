@@ -347,14 +347,75 @@
         let str = '[{"name":"test"},{"age":100}]'
         let arr = (new Function("return " + str))()
         console.log(arr); 
+    
+        //参数作用域问题
+        //函数执行的时候先给形参赋值，形参也是私有变量，如果给形参的默认值是一个变量先看是不是自己的私有变量，不是自己的再找全局中是否有这个变量，没有就报错
+        let m=10,n=100;
+        function fn5(x=m, y=n) {
+            //私有作用域，私有变量
+            console.log(x)
+            console.log(y)
+            let m = "go"
+            let n= "es6"
+        }
+    
+        fn5()
+
+### 扩展运算符
+
+    // 扩展运算符
+    // 1.将非数组变成数组
+    // 2.将数组变成非数组
+    let str = "123"
+    console.log([...str])
+    function fn() {
+        console.log(arguments)
+    }
+    //2.将数组变成非数组
+    let arr1 = [1,2,3,4]
+    let arr2 =[10,20,30,40]
+    console.log(arr1.concat(arr2));
+    // arr1.concat()
+    console.log([...arr1,...arr2])
+
+    let ary3 = [12,3,4,56,6]
+    console.log(Math.max.apply(null, ary3));
+    console.log(eval("Math.max(" + ary3 + ")"))
+
+    Math.max(...ary3)
+
+
+### 匿名函数
+
+
+    //箭头函数都是匿名函数
+    let fn = (形参)=>{
+        let fn = x=> x+1
+    }
+    // 箭头函数有几个特点，
+    // 1.箭头函数没有this指向 里面的this 是上一级的作用域下的this，如果它的上一级还是箭头函数呢
+
+    let obj = {
+        fn: () => {
+            let f = ()=>{
+                console.log(this);
+            }
+            f()
+        }
+    }
+    obj.fn()
+
+    //2. 箭头函数没有arguments
+    let f1 = ()=>{
+        console.log(arguments);
+    }
+    f1();
+
+    //3.箭头函数不可以用作构造函数 因为不可以使用new 执行
 
 
 
-
-
-
-
-
+### 对象的扩展
 
 
 

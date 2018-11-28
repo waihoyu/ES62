@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 扩展运算符
+    // 1.将非数组变成数组
+    // 2.将数组变成非数组
+    let str = "123"
+    console.log([...str])
+    function fn() {
+        console.log(arguments)
+    }
+    //2.将数组变成非数组
+    let arr1 = [1,2,3,4]
+    let arr2 =[10,20,30,40]
+    console.log(arr1.concat(arr2));
+    // arr1.concat()
+    console.log([...arr1,...arr2])
+
+    let ary3 = [12,3,4,56,6]
+    console.log(Math.max.apply(null, ary3));
+    console.log(eval("Math.max(" + ary3 + ")"))
+
+    Math.max(...ary3)
+
+
+</script>
+</body>
+</html>
