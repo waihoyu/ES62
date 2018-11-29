@@ -417,7 +417,109 @@
 
 ### 对象的扩展
 
+对象简洁表达方式
+
+    let name = "test" ,age = 100
+    let school = {name ,age}
+
+    let str = "name"
+    let obj = {
+        fn(){
+
+        },
+        //属性名都是字符串
+        //属性名是字符串，属性名使用[] 里面可以写变量
+        [str]:name,
+        ["my"+str]:name
+    }
 
 
+    //Object()  将参数变成对象
+    console.log(Object(1));
+    console.log(Object(true));
+    //Object.is 判断两个值是否相等
+    // === NaN 跟NaN 不等  -0 === 0  true
+
+    console.log(Object);
+    // Object.assign()
+    console.dir("d")
+    console.log(Object.is(NaN, NaN));
+    console.log(Object.is(-0, 0));
+    // Object.assign()  合并对象
+    //Object.assign(obj1,obj2) 将obj2合并到obj1上，返回obj1
+
+    //ES7 中提供了对象的扩展运算符
+    let school = {...obj1,...obj2}
+    console.log(school);
+
+    Object.getOwnPropertyDescriptor() //获取一个对象的描述
+    //字符串的length不可以修改，字符串中的方法是不可以改变原字符的
+
+    /**
+     * configurable:false 是否可配置，可以删除这个属性
+     * enumerable:false 是否可枚举
+     * value:3
+     * writable:false 是否可修改
+     *
+     */
+
+    // Object.keys()  返回值  数组 [所有可枚举的属性]
+
+    // Object.values()  返回值 数组  [所有可枚举的属性的键值]
+
+    // Object.entries()  返回值  数组 [每一项也是一个数组[键，值]]
+    
+    
+### 对象的set和get
+
+
+    let obj = {
+        _name :"aa",
+        get name(){
+            //只要通过 obj获取name属性 就会触发这个函数，而且这里通过return 返回值
+
+            return _name
+        },
+        set name(val){
+            //只要通过obj 给 name 属性设置值就会触发这个set函数
+            this._name = val
+        }
+    }
+
+    console.log(obj.name);
+   
+### Symbol的用法
+
+    //Symbol 是一个新的数据类型，而且是一个基本数据类型，是一个值类型
+    //使用Symbol函数执行得到一个Symbol数据类型
+    // symbol 跟字符串差不多，但是使用symbol 得到一个数据是完全不同的
+    // 每一个都是完全不同的，symbol可以接受一个参数()，是对这个symbol数据的描述
+    // 即使描述一样，但是值也是不一样的
+    // 它的诞生就是为了 当做对象的属性   任意一个symbol 得到的值都是不同的
+    //symbol 值不可以跟其他值计算  不可以转为数字的
+    //但是可以转boolean
+    // 可以调用tostring 方法
+    let sym1 = Symbol()
+    let sym2 = Symbol()
+
+    console.log(typeof sym1);
+    console.log(sym1);
+    console.log(sym2);
+
+    // 找到相同参数的 symbol 的值  如果之前有相同参数的symbol 值，找到这个值就返回如果没有就创建一个新的symbol值
+    // 使用symbol.for() 参数相同  值就相同
+    Symbol.for()
+    let test1 = Symbol.for("test")
+
+    let test2 = Symbol.for("test")
+
+    console.log(test1 == test2);
+
+    // symbol.keyFor(symbol 值)  找到 symbol.for 创建的值的描述
+    //如果使用的是Symbol 创建的是获取不到的
+
+    console.log(Symbol.keyFor(test1));
+
+### Set和 Map
 
 

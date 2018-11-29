@@ -8,6 +8,42 @@
 
 <script>
 
+    //Object()  将参数变成对象
+    console.log(Object(1));
+    console.log(Object(true));
+    //Object.is 判断两个值是否相等
+    // === NaN 跟NaN 不等  -0 === 0  true
+
+    console.log(Object);
+    // Object.assign()
+    console.dir("d")
+    console.log(Object.is(NaN, NaN));
+    console.log(Object.is(-0, 0));
+    // Object.assign()  合并对象
+    //Object.assign(obj1,obj2) 将obj2合并到obj1上，返回obj1
+
+    //ES7 中提供了对象的扩展运算符
+    let school = {...obj1,...obj2}
+    console.log(school);
+
+    Object.getOwnPropertyDescriptor() //获取一个对象的描述
+    //字符串的length不可以修改，字符串中的方法是不可以改变原字符的
+
+    /**
+     * configurable:false 是否可配置，可以删除这个属性
+     * enumerable:false 是否可枚举
+     * value:3
+     * writable:false 是否可修改
+     *
+     */
+
+    // Object.keys()  返回值  数组 [所有可枚举的属性]
+
+    // Object.values()  返回值 数组  [所有可枚举的属性的键值]
+
+    // Object.entries()  返回值  数组 [每一项也是一个数组[键，值]]
+
+
 </script>
 </body>
 </html>

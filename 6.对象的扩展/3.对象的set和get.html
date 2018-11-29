@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+
+    let obj = {
+        _name :"aa",
+        get name(){
+            //只要通过 obj获取name属性 就会触发这个函数，而且这里通过return 返回值
+
+            return _name
+        },
+        set name(val){
+            //只要通过obj 给 name 属性设置值就会触发这个set函数
+            this._name = val
+        }
+    }
+
+    console.log(obj.name);
+
+
+
+</script>
+</body>
+</html>

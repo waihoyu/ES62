@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //Symbol 是一个新的数据类型，而且是一个基本数据类型，是一个值类型
+    //使用Symbol函数执行得到一个Symbol数据类型
+    // symbol 跟字符串差不多，但是使用symbol 得到一个数据是完全不同的
+    // 每一个都是完全不同的，symbol可以接受一个参数()，是对这个symbol数据的描述
+    // 即使描述一样，但是值也是不一样的
+    // 它的诞生就是为了 当做对象的属性   任意一个symbol 得到的值都是不同的
+    //symbol 值不可以跟其他值计算  不可以转为数字的
+    //但是可以转boolean
+    // 可以调用tostring 方法
+    let sym1 = Symbol()
+    let sym2 = Symbol()
+
+    console.log(typeof sym1);
+    console.log(sym1);
+    console.log(sym2);
+
+    // 找到相同参数的 symbol 的值  如果之前有相同参数的symbol 值，找到这个值就返回如果没有就创建一个新的symbol值
+    // 使用symbol.for() 参数相同  值就相同
+    Symbol.for()
+    let test1 = Symbol.for("test")
+
+    let test2 = Symbol.for("test")
+
+    console.log(test1 == test2);
+
+    // symbol.keyFor(symbol 值)  找到 symbol.for 创建的值的描述
+    //如果使用的是Symbol 创建的是获取不到的
+
+    console.log(Symbol.keyFor(test1));
+</script>
+</body>
+</html>
