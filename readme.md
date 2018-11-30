@@ -522,4 +522,11 @@
 
 ### Set和 Map
 
-
+    //类似数组，只有值value  没有键key
+    //通过构造函数的方式创建一个Set实例
+    //参数是一个数组（或者是类似数组只有是有iterable接口）
+    // 数组， arguments , 元素集合， Set, Map , 字符串
+    // 会默认去重  
+    console.log(new Set([1,2,3,4]));
+    
+    
