@@ -526,7 +526,84 @@
     //通过构造函数的方式创建一个Set实例
     //参数是一个数组（或者是类似数组只有是有iterable接口）
     // 数组， arguments , 元素集合， Set, Map , 字符串
-    // 会默认去重  
+    //默认去重
     console.log(new Set([1,2,3,4]));
+
+    function fn() {
+        console.log(new Set(arguments));
+    }
+
+
+    // size set 实例的大小个数
+    // add clear delete  has forEach keys values entries
+    // add 表示增加  如果之前没有 则增加，如果之前有，则不增加，其返回值是增加后的set实例(可以实现链式写法)
+    let set1 =  new Set([1,2,3,null, NaN,true])
+
+    //delete 删除某一个，  返回值，true/false 如果里面有这一项，就删除成功就返回true，没有此项，就删除失败false
+
+    //clear 清空，没有返回值 undefined  没有参数
+
+    set1.clear()
+
+    // has 判断有没有此项， 返回值true/false
+    let set2 = new Set([1,2,"哈哈",null, NaN,true])
+    console.log(set2.has(NaN));
+
+    //遍历forEach keys values entries
+    set2.forEach((...item) =>{
+        console.log(item);
+    })
+
+    set2.forEach((item,index,input) =>{
+        //Set 实例只有value 没有key
+        //item,index 当前项
+        //input 当前实例
+        console.log(item);
+
+    })
+    console.log(set2.keys);
+
+    for (let key of set2.keys())
+    {
+        //val 是values 值
+        console.log(key);
+    }
+
+    for (let [item,value] of set2.keys())
+    {
+        //val 是values 值
+        console.log(key);
+    }
     
-    
+### Set的用法
+
+    //数组去重
+    let arrry1 = [1,2,3,4,5,5,5,6]
+
+    console.log([...new Set(arrry1)])
+
+    console.log(Array.from(new Set(arrry1)));
+
+
+    let ary = [1,3,4,5]
+    let ary2 = [2,4,5]
+
+    // 并集
+    function add() {
+        return [...new Set([...ary,...ary2])]
+    }
+    //交集
+    function same() {
+        return ary.filter((item)=>{
+            ary2.includes(item)
+        })
+    }
+    //差集
+    function diff() {
+        add(ary,ary2).filter(item =>!same(ary,ary2).includes(item));
+    }
+
+### Map的用法
+
+
+
