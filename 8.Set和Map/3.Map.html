@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //构造函数方式创建一个Map实例
+    //new Map([[key,value],[]])
+    //参数是一个数组，数组每一项也是一个数组，有两项key,value
+    //一个对象，属性名必须是字符串，如果你写的不是字符串也默认转为字符串
+    //Map 实例的属性名可以是任何数据类型
+    let arry = [1,2],o={}
+
+    let obj = {
+        name:'map',
+        1:'1',
+        true:'true',
+        [arry]:arry,
+        [o]:o
+    }
+
+    let map1 = new Map([[1,'m1'],[2,'m2'],[3,'m3'],[o,'m o'],[arry,'m arry']])
+
+    //size 键值对的个数
+
+
+    //get set has delete clear
+
+    //get 获取 value
+    //set (key,value) 如果之前有过key 一样的是修改，没有是增加，返回新的map 实例（实现链式写法）
+
+    console.log(map1.get(1));
+    map1.set(1,2)
+    map1.set(false,2)
+
+    //has 判断有没有  对应的value 有true 没有false
+
+    map1.has(1)
+
+    //delete 删除属性 key  返回值  true  false
+     map1.delete(1)
+
+    //clear  清空 ，没有返回值
+    map1.clear()
+
+    //forEach  keys values  entries
+    let map2 = new Map([[1,'m1'],[2,'m2'],[3,'m3'],[o,'m o'],[arry,'m arry']])
+
+    map2.forEach((value,key,input)=>{
+        console.log(value); //value
+        console.log(key);//key
+        console.log(input);  //map实例
+
+    })
+
+    for (let key of map2.keys())
+    {
+        console.log(key)
+    }
+
+    for (let val of map2.values())
+    {
+        console.log(val)
+    }
+    for (let [key,val] of map2.entries())
+    {
+        console.log(key,val)
+    }
+
+    //给你一个数组变成 Map实例
+    let ary = ["a","b","c","d","e","f"]
+    let map3 = new Map()
+    for (let [index,item] of ary.entries()){
+        map3.set(index, item)
+    }
+    console.log(map3);
+
+</script>
+</body>
+</html>
