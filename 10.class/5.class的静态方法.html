@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        //类就相当于原型  写在原型上的方法都被实例继承了，
+        //假如想给当前类本身加一些方法 我们可以在方法前面加上一个关键字 static,
+        //不会被实例继承，只有类本身可以使用
+        //例如Array.of()
+        //静态方法可以被子类继承
+
+        class AA{
+            constructor(){
+
+            }
+            getA(){
+
+            }
+            static getB(){
+                console.log("我是静态的方法");
+            }
+        }
+
+        class Father{
+            static  fa(){
+                console.log("Father")
+            }
+        }
+        class Son extends  Father{
+            static  getSon(){
+                super.fa()
+            }
+        }
+
+        let s = new Son()
+        Son.getSon()
+
+    </script>
+</body>
+</html>

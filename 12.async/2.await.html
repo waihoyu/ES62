@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // await 是一个语法糖，不用通过then就可以执行
+    let p = new Promise((resolve,reject)=>{
+        resolve("async")
+    })
+    async  function getA() {
+        await p
+        //await 后面是一个promise 实例，如果不是也会默认转为 promise
+        //直接让promise 执行 返回执行时的参数
+    }
+
+    getA().then(()=>{
+
+    }).catch(()=>{
+
+    })
+
+</script>
+</body>
+</html>

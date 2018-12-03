@@ -5,8 +5,49 @@
     <title>Title</title>
 </head>
 <body>
-<script>
+    <script>
+        let obj = {name:"proxy"}
+        let proxy1 = new Proxy(obj, {
+            get(target,propkey,value,receiver){
+                return target[propkey]
+            },
+            set(target,propkey,value,receiver){
+                console.log("setting");
+                target[propkey]=value
+                return true
+            },
+            has(target,propKey){
+                return propKey in target
+            },
+            apply(target,object,args){
 
-</script>
+            }
+        })
+        console.log(proxy1.name);
+        proxy1.age = 10
+
+        function getObj() {
+            console.log(this);
+            return {name:"OBJ"}
+        }
+
+        let proxy2 = new Proxy(getObj,{
+            apply(target,object,args){
+                if (object){
+                    object.fn = target
+                    object.fn(...args)
+                    delete object.fn
+                    console.log("if")
+                }else
+                {
+                    target(...args)
+                    console.log("else")
+                }
+            }
+        })
+
+        proxy2.call(obj,1,2,3)
+        proxy2.call(null,1,2,3)
+    </script>
 </body>
 </html>

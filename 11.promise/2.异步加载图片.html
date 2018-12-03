@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+
+        function loadImg(url) {
+            return new Promise((resolve,reject)=>{
+                let img = new Image()
+                img.src=url
+                img.onload = function () {
+                    resolve(img)
+                }
+                img.onerror = function (e) {
+                    reject(e)
+                }
+            })
+
+        }
+        loadImg("").then((img)=>{
+            console.log(img);
+        }).catch((e)=>{
+            console.log("err");
+            console.log(e);})
+        //promise.all([每一项都是Promise,如果不是默认转为Promise])
+        //数组中每一项都是成功，才会走成功回调  默认将每一个项的参数    放在一个数组中传给回调函数 ，只要有一个错误，就走回调
+        let pall = Promise.all([])
+        pall.then((res)=>{
+            console.log(res);}).catch(()=>{})
+
+
+    </script>
+</body>
+</html>

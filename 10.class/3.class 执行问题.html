@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class AA{
+            constructor(name){
+                this.name = name
+            }
+        }
+        let a = new AA("err");
+
+            let a1 = new class {
+                constructor(name){
+                    console.log(name);
+                }
+            }("类的定义")
+    </script>
+</body>
+</html>

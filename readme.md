@@ -699,7 +699,224 @@
     console.log(proxy1.name)
     
     
+         let obj = {name:"proxy"}
+         let proxy1 = new Proxy(obj, {
+             get(target,propkey,value,receiver){
+                 return target[propkey]
+             },
+             set(target,propkey,value,receiver){
+                 console.log("setting");
+                 target[propkey]=value
+                 return true
+             },
+             has(target,propKey){
+                 return propKey in target
+             },
+             apply(target,object,args){
+ 
+             }
+         })
+         console.log(proxy1.name);
+         proxy1.age = 10
+ 
+         function getObj() {
+             console.log(this);
+             return {name:"OBJ"}
+         }
+ 
+         let proxy2 = new Proxy(getObj,{
+             apply(target,object,args){
+                 if (object){
+                     object.fn = target
+                     object.fn(...args)
+                     delete object.fn
+                     console.log("if")
+                 }else
+                 {
+                     target(...args)
+                     console.log("else")
+                 }
+             }
+         })
+ 
+         proxy2.call(obj,1,2,3)
+         proxy2.call(null,1,2,3)   
+
+
+### Class 的使用
+
+        function Fn() {
+            this.x = 10
+        }
+        Fn.prototype.getX = function(){
+
+        }
+        let f = new Fn()
+        // f.constructor
+
+        let A = class AA{
+            constructor(){
+
+                console.log(AA.name);
+                this.x = 10
+                return  0
+            }
+            getA(){
+                console.log(AA.name);
+            }
+        }
+
+        new AA()
+        
+        
+             class AA{
+                 constructor(name){
+                     this.name = name
+                 }
+             }
+             let a = new AA("err");
+     
+                 let a1 = new class {
+                     constructor(name){
+                         console.log(name);
+                     }
+                 }("类的定义")   
+        
+        
+        //类就相当于原型  写在原型上的方法都被实例继承了，
+        //假如想给当前类本身加一些方法 我们可以在方法前面加上一个关键字 static,
+        //不会被实例继承，只有类本身可以使用
+        //例如Array.of()
+
+        class AA{
+            constructor(){
+
+            }
+            getA(){
+
+            }
+            static getB(){
+
+            }
+        }
+
+
+
+    class S {
+        constructor(x){
+            this.x = x
+        }
+        getX(){
+            console.log(this.x);
+        }
+        static getY(){
+            console.log(this);
+            console.log(this.y);
+        }
+    }
     
+    
+    class B extends S {
+        constructor(){
+            // this.y = 9
+            super()
+            // 执行完成之后才会有this
+            // 必须写super,子类没有this this继承父类 super
+    
+        }
+        getX(){
+            //super  指向父类A的原型
+            super.getX()
+        }
+        
+        //static  父类的静态、私有方法也可以继承
+        static getY(){
+            //3.super 指向父类本身
+            super.getY()
+        }
+    }
+
+
+### Promise 的使用
+
+        function loadImg(url) {
+            return new Promise((resolve,reject)=>{
+                let img = new Image()
+                img.src=url
+                img.onload = function () {
+                    resolve(img)
+                }
+                img.onerror = function (e) {
+                    reject(e)
+                }
+            })
+
+        }
+        loadImg("").then((img)=>{
+            console.log(img);
+        }).catch((e)=>{
+            console.log("err");
+            console.log(e);})
+
+        function loadImg(url) {
+            return new Promise((resolve,reject)=>{
+                let img = new Image()
+                img.src=url
+                img.onload = function () {
+                    resolve(img)
+                }
+                img.onerror = function (e) {
+                    reject(e)
+                }
+            })
+
+        }
+        loadImg("").then((img)=>{
+            console.log(img);
+        }).catch((e)=>{
+            console.log("err");
+            console.log(e);})
+        //promise.all([每一项都是Promise,如果不是默认转为Promise])
+        //数组中每一项都是成功，才会走成功回调  默认将每一个项的参数    放在一个数组中传给回调函数 ，只要有一个错误，就走回调
+        let pall = Promise.all([])
+        pall.then((res)=>{
+            console.log(res);}).catch(()=>{})
+            
+    // Promise.race([p1,p2,p3])
+    //只要一个状态改变，当前实例的状态就跟着变
+    //
+### async 的使用
+
+    async  function rpint() {
+        throw new Error("err")
+        return ""
+    }
+    rpint().then((res)=>{
+        console.log(res);
+    }).catch((e)=>{
+        console.log(e);
+    })
+    
+    let p = new Promise((resolve,reject)=>{
+        resolve("async")
+    })
+    
+    async  function getA() {
+        await p
+        //await 后面是一个promise 实例，如果不是也会默认转为 promise
+        //直接让promise 执行 返回执行时的参数
+    }
+
+    getA().then(()=>{
+
+    }).catch(()=>{
+
+    })
+
+
+### await 的使用
+
+
 
 
 
