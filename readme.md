@@ -920,3 +920,21 @@
 
 
 
+### esmodule的使用
+
+common.js
+sea.js require.js
+
+require  导入
+
+module.exports 
+
+
+
+
+
+
+
+
+
+
