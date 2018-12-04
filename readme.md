@@ -919,22 +919,37 @@
 
 
 
-
 ### esmodule的使用
 
-common.js
-sea.js require.js
-
-require  导入
-
-module.exports 
-
-
-
+    common.js
+    
+    sea.js require.js
+    
+    require  导入
+    
+    module.exports 
 
 
+### 基本数据类型
 
+    number string boolean  null undefined
+    
+    Object function
+    
+    Symbol (es6)
 
+### 数组的操作方法
 
+    操作数据的方法  (es4)
+     
+    pop push unshift shift slice splice  reverse sort indexOf  lastIndexof  concat  
+
+    能改变原数组的  pop push unshift shift slice splice  reverse  sort
+    
+    forEach  filter(过滤) map find some every includes reduce 
+    
+    es6的方法：includes find
+    
+### 数组的操作方法的使用
 
 
