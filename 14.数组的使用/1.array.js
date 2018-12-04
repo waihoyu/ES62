@@ -38,7 +38,7 @@ let obj = {school:"obj",age:9}
 
 
 for (let value of Object.keys(obj)) {
-    console.log(obj[val]);
+    console.log(obj[value]);
 }
 
 
@@ -46,8 +46,47 @@ for (let value of Object.keys(obj)) {
 //如果返回true,表示这一项放到新数组中
 
 
-[1,2,3,4,5].filer(function (item) {
+[1,2,3,4,5].filter(function (item) {
     return item < 5
 })
+
+// map 映射 将原有的数组映射成一个新数组 [1,2,3,4]
+
+
+let arry1 = [1,2,3].map(function (item) {
+    return item* 2
+})
+
+console.log(arry1.join("。"));
+
+let arr5 = [1,2,3,4,5]
+
+console.log(arr5.includes(5));//返回的是boolean
+
+// console.log(arr5.find(5)); //返回找到的那一项，不会改变数组
+
+
+let result = arr5.find(function (item,index) {
+    return item.toString().indexOf(5)>-1
+})
+
+
+console.log(result);
+
+//some 找到true 就停止  返回true
+
+//every 找到false  找到false 后就停止，返回false
+
+
+//reduce
+// prev  代表的是数组的第一项 ，next 是数组的第二项
+// 第二项prev 是 undefined   next 是数组的第二项
+
+let redu= [1,2,3,4,5].reduce(function (pre,next,index,item) {
+    return pre + next
+},0)
+
+
+console.log(redu);
 
 
