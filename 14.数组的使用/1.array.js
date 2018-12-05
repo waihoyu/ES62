@@ -86,7 +86,6 @@ let redu= [1,2,3,4,5].reduce(function (pre,next,index,item) {
     return pre + next
 },0)
 
-
 console.log(redu);
 
 
