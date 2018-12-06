@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="appInput">
+    <script>
+        let obj ={}
+        obj.name = 1
+        let temp = {}
+        Object.defineProperty(obj,"name",{
+            // value: 2,
+            // configurable:true,
+            // writable:true,
+            // enumerable:false,
+            get(){ //取obj的name 属性会触发
+                return temp["name"]
+            },
+            set(val){
+                temp["name"] =val
+                appInput.value = obj.name
+            }
+        })
+        for (let key in obj)
+        {
+            console.log(key);
+        }
+
+        appInput.addEventListener('input',function () {
+            obj.name = this.value
+        })
+
+    </script>
+</body>
+</html>

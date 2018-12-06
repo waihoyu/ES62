@@ -1068,3 +1068,40 @@
 
     Object.defineProperty(es5)的没有替代方案，
     
+    let obj ={}
+    obj.name = 1
+    let temp = {}
+    Object.defineProperty(obj,"name",{
+        // value: 2,
+        // configurable:true,
+        // writable:true,
+        // enumerable:false,
+        get(){ //取obj的name 属性会触发
+            return temp["name"]
+        },
+        set(val){
+            temp["name"] =val
+            appInput.value = obj.name
+        }
+    })
+    for (let key in obj)
+    {
+        console.log(key);
+    }
+
+    appInput.addEventListener('input',function () {
+        obj.name = this.value
+    })
+       
+### vue的指令
+
+    v-text
+    v-once
+    v-html
+    v-model
+    v-for
+    
+### vue的事件
+
+    onclick 上的方法都是 windows 上的
+

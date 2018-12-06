@@ -5,21 +5,45 @@
     <title>Title</title>
 </head>
 <body>
-
-
     <div id="app">
         {{msg}}
+        <input type="text" v-model="msg">
+        <div v-text="msg"></div>
+        <div v-once>{{msg}}</div>
+        <div>{{arr}}</div>
+        <ul>
+            <li v-for="(fruit,index) in fruits">{{fruit.name}}</li>
+        </ul>
+        <div v-on:click="fn">111</div>
+        <!--如果不传递参数，则不要写括号会自动传入事件源-->
+        <div @mousedown = "fn1($event,1)"> mousedown </div>
     </div>
 <script src="../node_modules/vue/dist/vue.js"></script>
 <script>
-
+    //vue会循环data中的数据（数据劫持） 依次的增加 getter  setter
     let vm = new Vue({
         el:"#app",
         data:{
-            msg:"hell,learn vue"
+            msg:"hell,learn vue",
+            param:"<h1>param</h1>>",
+            a:{},
+            arr:[1,2,3],
+            fruits:[{name:'香蕉'},{name:'香蕉'},{name:'香蕉'}],
+            fn(){
+                alert("test")
+            }
+        },
+        methods:{
+            fn1(event,a){console.log(event)}
         }
     })
+    vm.$set(vm.a,'school',1)
+    // 如何修改数组里面的值呢？
+    //变异方法：
+    vm.arr.reverse()
 
 </script>
+
+
 </body>
 </html>
