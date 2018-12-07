@@ -75,3 +75,4 @@ typings/
 .serverless
 
 /16.vue/node_modules/
+/16.vue/package-lock.json

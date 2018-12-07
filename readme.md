@@ -1104,4 +1104,42 @@
 ### vue的事件
 
     onclick 上的方法都是 windows 上的
-
+    指令  dom元素的行间属性 vue提供了内置的指令，必须v-开头，后面的值均为变量
+    v-model(表单元素)  忽略掉value checked  selected   将数据绑定到视图上，视图修改后会影响数据的变化
+    v-text 取代{{}}  v-cloak   解决闪烁（块级）问题  
+    [v-cloak]{display:none}  后期不是重点  后期都不采用
+    -v-once  绑定一次，数据再变化也不会导致视图刷新
+    -v-html  将字符串转化成html
+    -v-for  循环  （数组、对象、字符串、数字）
+    -v-on(@) 
+    绑定给dom元素
+    this指向的是实例，不能使用箭头函数，事件源对象如果不写括号，可以自动传入，否则手动写入
+    
+    
+ ### axios  
+ ai show si
+    
+    
+ ### axios ajax 
+       
+    function ajax({url="",type='get',dataType='json'}) {
+        return new Promise((resolve,reject)=>{
+            let xhr = new XMLHttpRequest()
+            xhr.open(type,url, true)
+            xhr.responseType = dataType
+            xhr.onload = function () {
+                if (xhr.readyState == 200) {
+                    resolve(xhr.response)
+                }else {
+                    reject("not found")
+                }
+            }
+            xhr.onerror = function (err) {
+                reject(err)
+            }
+            xhr.send()
+        })
+    
+    }
+    
+    
