@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-<div id="app">
 
+<div id="app">
+    <!--//栅格化布局-->
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered table-hover">
+                <caption class="h2  text-center text-danger">购物车</caption>
+                <tr>
+                    <th>全选<input type="checkbox"></th>
+                    <td>商品</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>小计</td>
+                    <td>操作</td>
+                </tr>
+                <tr v-for="(product,index) in products">
+                    <td><input type="checkbox" v-model="product.isSelected"></td>
+                    <td><img :src="product.productCover" :title="product.productName">{{product.productName}}</td>
+                    <td>{{product.productPrice}}</td>
+                    <td><input type="text" v-model.number.lazy="product.productCount"></td>
+                    <td>{{product.productPrice}}</td>
+                    <td><button class="btn btn-danger">删除</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
 
 <script src="../node_modules/vue/dist/vue.js"></script>
