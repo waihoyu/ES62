@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+<div id="app">
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover table-bordered">
+                <caption class="h2 text-center">购物车</caption>
+                <tr>
+                    <th>全选<input type="checkbox" v-model="selectAll"></th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>操作</th>
+                </tr>
+                <tr v-for="product in products">
+                    <td><input type="checkbox" v-model="product.isSelected"></td>
+                    <td><img :src="product.productCover" :title="product.productName">{{product.productName}}</td>
+                    <td>{{product.productPrice}}</td>
+                    <td><input type="text" v-model="product.productCount"></td>
+                    <td>{{product.productCount * product.productPrice | toFixed(2)}}</td>
+                    <td><button class="btn btn-danger" @click="remove(product)">删除</button></td>
+                </tr>
+                <tr>
+                    <td colspan="6">总计：{{sum | toFixed(2)}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        created(){
+            console.log("~~~")
+            axios.get("./cart2.json").then((res)=>{this.products = res.data},(err)=>{
+                console.log(err);})
+        },
+        data:{
+            products:[]
+        },
+        methods:{
+            remove(p){
+                this.products = this.products.filter((item)=>{ return item != p})
+            }
+        },
+        computed:{
+            selectAll:{
+                get(){
+                    return this.products.every((item)=>{
+                        return item.isSelected
+                    })
+                },
+                set(val){
+                    this.products.forEach(item=>{item.isSelected = val })
+                }
+            },
+            sum(){
+                return this.products.reduce((prev,next)=>{
+                    if (!next.isSelected) return prev;  return prev + next.productPrice * next.productCount
+                },0)
+            }
+        },
+        filters:{
+            toFixed(input,param1){
+                return "￥："+ input.toFixed(param1)
+            }
+        }
+    })
+</script>
+</body>
+</html>

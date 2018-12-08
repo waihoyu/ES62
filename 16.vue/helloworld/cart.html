@@ -39,7 +39,7 @@
                     <td><button class="btn btn-danger" @click="remove(product)">删除</button></td>
                 </tr>
                 <tr>
-                    <td colspan="6">总价格：{{sum() |toFixed(2)}}</td>
+                    <td colspan="6">总价格：{{sum |toFixed(2)}}</td>
                 </tr>
             </table>
         </div>
@@ -121,7 +121,7 @@
                 }
             },
             methods:{
-                sum(){
+                sum1(){
                     return this.products.reduce((prev,next)=>{if (!next.isSelected)return prev;return prev+next.productCount* next.productPrice },0)
                 },
                 changeOne(){
