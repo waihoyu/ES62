@@ -1115,10 +1115,9 @@
     绑定给dom元素
     this指向的是实例，不能使用箭头函数，事件源对象如果不写括号，可以自动传入，否则手动写入
     
-    
- ### axios  
+ ### axios 
+  
  ai show si
-    
     
  ### axios ajax 
        
@@ -1143,3 +1142,78 @@
     }
     
     
+### 判断事件源绑定事件
+
+    xxx.addEventListener('click',fn,true)
+    事件冒泡 
+
+
+    <div @click="parent">parent
+        <div @click="child">child
+            <div @click.stop="grandson">grandson</div>
+        </div>
+    </div>
+    @click.stop="grandson"
+    // e.cancelBubble = true
+    e.stopPropagation()
+    @click.capture 
+    @click.prevent="grandson"
+    @事件.once 
+    @事件.self
+    e.srcElement&&e.target 判断事件源绑定事件
+    
+### filters 实例上可以用
+
+    Vue.filter('my')
+    
+    
+### computed 
+
+    不支持异步
+    
+### watch  
+
+    watch 的属性名字要和观察的人的名字一致     
+    
+    
+### template  
+
+    template 是vue提供给我的 没有实际意义  用来包裹元素用  v-show 不支持 template  只有v-if 使用
+    
+    
+ ### v-if/v-show
+ 
+ 
+ ### v-bind 简写  
+ 
+    比较特殊的有class  style
+    :class:={}
+    
+    
+ ### v-bind 简写  
+   
+ 
+    比较特殊的有class  style
+    :class:={}
+
+
+ ### 实现单页开发的方式
+ 
+    通过hash值的方式 （可以产生历史管理）
+    浏览器自带的历史管理的方法history （history.push()）
+    history.pushState('','','/dc')
+    开发的时候使用hash的方式， 上线的话我们用history的方式
+    
+ ### directives
+ 
+ 可以操作dom了。
+ 
+ ### localStorage的使用
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
