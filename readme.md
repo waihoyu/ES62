@@ -1212,8 +1212,110 @@
  
  
  
-  
+ ###  深入理解 JavaScript 中的 class
  
  
  
  
+ ### AJAX 的学习和使用
+ 
+     function success(text) {
+         var textarea = document.getElementById('test-response-text');
+         textarea.value = text;
+     }
+     
+     function fail(code) {
+         var textarea = document.getElementById('test-response-text');
+         textarea.value = 'Error code: ' + code;
+     }
+     
+     var request = new XMLHttpRequest(); // 新建XMLHttpRequest对象
+     
+     request.onreadystatechange = function () { // 状态发生变化时，函数被回调
+         if (request.readyState === 4) { // 成功完成
+             // 判断响应结果:
+             if (request.status === 200) {
+                 // 成功，通过responseText拿到响应的文本:
+                 return success(request.responseText);
+             } else {
+                 // 失败，根据响应码判断失败原因:
+                 return fail(request.status);
+             }
+         } else {
+             // HTTP请求还在继续...
+         }
+     }
+     
+     // 发送请求:
+     request.open('GET', '/api/categories');
+     request.send();
+     
+     alert('请求已发送，请等待响应...');
+ 
+ 
+     function success(){
+         console.log("成功");
+     }
+     
+     function fail(){
+         console.log("失败");
+     }
+     
+     let request = new XMLHttpRequest()
+     
+     request.onreadystatechange = function () {
+         if (request.readyState === 4){
+             if (request.status === 2000){
+                 return success()
+             }else {
+                 return fail()
+             }
+         }else{
+     
+         }
+     }
+     
+     request.open('GET','')
+     
+     request.send()
+
+ ### 浏览器的对象
+ 
+     window
+     navigator
+     screen
+     location
+     document
+        cookie httpOnly
+     history 
+        back()或forward ()
+     
+     innerHTML
+     innerText
+     textContent
+     
+     appendChild
+     removeChild
+     // 注意到删除后的节点虽然不在文档树中了，但其实它还在内存中，可以随时再次被添加到别的位置
+     parentElement
+     parent.children[0]
+     
+     
+### XSS攻击       
+        
+       网络钓鱼(Phishing) 
+       
+        
+### HTML表单的输入控件主要有以下几种：
+
+    文本框，对应的<input type="text">，用于输入文本；
+    
+    口令框，对应的<input type="password">，用于输入口令；
+    
+    单选框，对应的<input type="radio">，用于选择一项；
+    
+    复选框，对应的<input type="checkbox">，用于选择多项；
+    
+    下拉框，对应的<select>，用于选择一项；
+    
+    隐藏文本，对应的<input type="hidden">，用户不可见，但表单提交时会把隐藏文本发送到服务器。
