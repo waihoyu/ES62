@@ -1211,9 +1211,33 @@
  ### localStorage的使用
  
  
+ ### ref
  
+     this.$data this.$watch this.$el this.$set this.$options  this.$nextTick（dom操作完成） this.$refs(只能获取一个，如果通过v-for循环得到的，那么可以取到多个)
+ 
+ 
+### 全局组件
+    只支持首字母大写   kebab
+    Vue.component('my-handsome',{ //一个对象可以看成一个组件
+    template:'<div>我的全局组件</div>',// 
+    data(){   //模板数据必须是函数  return 一个实例作为组件的数据
+    
+    }
+    
+    })
+### 局部组件
+
+
+### 发布 emit  订阅 on { }
+  
+ 
+### 在插件上加ref 会发生什么事情
+   
+   
+### keep-alive 缓存
+
+   
  ###  深入理解 JavaScript 中的 class
- 
  
  
  
@@ -1319,3 +1343,10 @@
     下拉框，对应的<select>，用于选择一项；
     
     隐藏文本，对应的<input type="hidden">，用户不可见，但表单提交时会把隐藏文本发送到服务器。
+    
+### Canvas
+     
+    在使用Canvas前，用canvas.getContext来测试浏览器是否支持Canvas：
+    
+    
+    
