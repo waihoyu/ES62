@@ -1348,5 +1348,24 @@
      
     在使用Canvas前，用canvas.getContext来测试浏览器是否支持Canvas：
     
+### eventBus 总线
+
+    let eventBus = new Vue()
+
+### 基础路由 
+
+    - 访问不同的路径，就可以返回不同的结果
+    - 多页面（spa） 单页面应用 
     
+    - single page application   
+
+###   vue-router 介绍
+
+    hash模式  h5 的history.pushState 模式  
+    routes
+    route-view 
+
+
+
+ 
     
