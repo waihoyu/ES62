@@ -1357,14 +1357,33 @@
     - 访问不同的路径，就可以返回不同的结果
     - 多页面（spa） 单页面应用 
     
-    - single page application   
+    - single page application    
 
 ###   vue-router 介绍
 
-    hash模式  h5 的history.pushState 模式  
+    hash模式  h5 的 history.pushState 模式  
     routes
     route-view 
+    this.$router.push
+    this.$router.back
+    this.$router.go
+    
+    path  redirect 
+    
+    
+###   模块规范
 
+    let path = require('path')
+    
+    webpack  必须采用commonjs 写法
+    module.exports = {
+        entry:'./src/main.js'
+        output:{
+            filename:'bundle.js'
+            path:'dist'
+        }
+    
+    }
 
 
  
