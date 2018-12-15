@@ -1382,12 +1382,25 @@
             filename:'bundle.js'
             path:'dist'
         }
-    
-    }
-    
+    }  
     
 ###   面试题
 
     状态码301表示永久重定向，状态码302表示临时重定向
  
     Node.js发起的HTTP请求不存在跨域限制
+
+###   babel-core  babel-loader
+
+
+###   webpack 认识 css  less sass stylus css-loader  file-loader url-loader 
+
+test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
+
+
+###   import page from './2.jpg'
+    在js中引入图片需要import,或者写一个线上路径
+    
+
+
+
