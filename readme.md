@@ -1399,8 +1399,23 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 
 
 ###   import page from './2.jpg'
-    在js中引入图片需要import,或者写一个线上路径
+    在js中引入图片需要import,或者写一个线上路径9
     
+    
+### render 函数的作用是将虚拟dom渲染成真实的dom
+
+    render函数是将虚拟dom渲染成真实dom createElement返回的是虚拟dom
 
 
+### vue文件
 
+    需要安装 vue-loader  vue-template-compiler 
+    vue-loader 解析.vue文件的
+    vue-template-compiler 用来解析vue模板的
+    
+    
+    npm install webpack webpack-dev-server
+    babel-core babel-loader babel-preset-es2015 babel-preset-stage-0 css-loader sty
+    le-loader less less-loader file-loader url-loader html-webpack-plugin --save-d
+
+    
