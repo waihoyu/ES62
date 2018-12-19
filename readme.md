@@ -1439,13 +1439,26 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 ###  logger插件的使用
 
 
-
 ###  js中的事件委托或是事件代理详解
 
-
-
-
+    https://www.cnblogs.com/liugang-vip/p/5616484.html
+    
 ##  JavaScript面试题
+
+    https://blog.csdn.net/wdlhao/article/details/79079660
+    
+    https://www.jianshu.com/p/8b68f4df749e
+    
+    http://dy.163.com/v2/article/detail/E0160M6F0518T2NO.html
+    
+##  正则表达式
+
+    regexbuddy 需要下载工具  
+    
+    其他在线工具
+
+
+
 
 
 
