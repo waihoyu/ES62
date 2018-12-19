@@ -9,7 +9,10 @@
                   fill="currentColor" class="octo-body"></path>
         </svg>
         <Tab></Tab>
-        <router-view></router-view>
+        <keep-alive>
+            <router-view v-if="$route.meta.keepAlive"></router-view>
+        </keep-alive>
+
     </div>
 </template>
 

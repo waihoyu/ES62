@@ -1418,4 +1418,22 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
     babel-core babel-loader babel-preset-es2015 babel-preset-stage-0 css-loader sty
     le-loader less less-loader file-loader url-loader html-webpack-plugin --save-d
 
-    
+### 路由元信息
+
+
+###  下拉加载 /page
+
+
+###  代码分割
+
+
+###  发布项目
+
+
+###  router的全局钩子
+
+
+###  vuex中的状态
+
+
+###  logger插件的使用

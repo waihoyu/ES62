@@ -35,11 +35,11 @@
         line-height: 40px;
         font-weight: bold;
         color: white;
-        width: 100%;}
+        width: 100%;
+    }
         i{
             position: absolute;
             left: 10px;
             font-size: 20px;
         }
-
 </style>
