@@ -1451,6 +1451,9 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
     
     http://dy.163.com/v2/article/detail/E0160M6F0518T2NO.html
     
+    https://soyomo.iteye.com/blog/2394763
+    
+    
 ##  正则表达式
 
     regexbuddy 需要下载工具  
@@ -1458,5 +1461,19 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
     其他在线工具
 
 ##  原型
+
+
+##  Node仅仅是一个进程，而其他非node语言都是多进程的，每个进程需要耗费大约2MB内存，理论上一个8GB内存的服务器可以同时连接的最大用户数为4000个。
+
+    Node是非阻塞的IO机制
+    异步 IO特性
+    Node.js适合开发I/O的业务开发，不适合大量计算的业务
+    
+   事件驱动是Nodejs的底层机制，有一个事件环节
+    
+##  Node的路由
+
+
+
 
 

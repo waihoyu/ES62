@@ -16,6 +16,7 @@ Elem.prototype.html = function (val){
     }
 }
 
+
 Elem.prototype.on=function (type,fn){
     let elem = this.elem
     elem.addeventlistener(type,fn)
