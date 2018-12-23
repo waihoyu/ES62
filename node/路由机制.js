@@ -9,16 +9,27 @@ let server = http.createServer((request, response)=>{
     if (request.url == "/"){
         response.setHeader('Content-Type','text/html;charset=UTF-8')
         response.end("首页")
-    }else if (request.url == "/music"){
+    }
+    else if (request.url == "/music"){
         response.end("音乐")
-    } else{
+    }
+    else if (/^\/student\/[\d]{6}$/.test(request.url)){
+        response.setHeader('Content-Type','text/html;charset=UTF-8')
+        let reg = /\/student\/([\d]{6})/
+        let xuehao = reg.exec(request.url)[1]
+        fs.readFile("./db.json",function (err,data) {
+            if (err){
+                response.end("文件读取失败")
+                return
+            }
+            let dataObj = JSON.parse(data.toString())
+            response.end("<h1>学生信息，学号：" + dataObj[xuehao]['xiaoming'] + "</h1>")
+        })
+
+    }
+    else{
         response.end("对不起，没有这个页面")
     }
-
-    // fs.readFile("./test.txt",function (err,filecontent) {
-    //     response.setHeader("Content-Type","text/html;charset=UTF-8")
-    //     response.end(filecontent)
-    // })
 
 })
 
