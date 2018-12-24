@@ -1,13 +1,14 @@
 
 
 let http = require('http')
-
 let fs = require('fs')
-
+let querystring = require('querystring')
+let path = require('path')
 let server = http.createServer((request, response)=>{
-
+    console.log(request.url);
+    response.setHeader('Content-Type','text/html;charset=UTF-8')
     if (request.url == "/"){
-        response.setHeader('Content-Type','text/html;charset=UTF-8')
+
         response.end("首页")
     }
     else if (request.url == "/music"){
@@ -36,3 +37,6 @@ let server = http.createServer((request, response)=>{
 server.listen(4000)
 
 console.log("服务器已经启动了")
+
+
+
