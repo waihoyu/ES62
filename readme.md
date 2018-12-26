@@ -1474,14 +1474,39 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 ##  Node的路由
 
 
-
-
 ##  Node自定义模块
 
 
-##  Node  expors  
+##  Node  exports  
+
+
+##  Node  formidable     ejs  模板引擎
+
+
+##  Node  formidable     ejs  模板引擎
+
+
+##  Node 
+    call  和 apply  都是相同的 
+       
+##  Node   
+    
+    
+## node.js的串讲复习
+
+
+## node express 复习  
 
 
 
-
-##  Node  fomidable   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
