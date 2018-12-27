@@ -1,3 +1,8 @@
+/**
+ *
+ *
+ */
+
 var file = require("../models/file.js");
 var math = require("../models/math.js");
 
@@ -8,7 +13,6 @@ exports.showIndex = function (request,response) {
 //显示结果
 
 exports.showResult = function (request,response) {
-
     let number = request.params.number
     let  numberResult = []
     if (number > 10000){
