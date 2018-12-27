@@ -6,5 +6,5 @@ app.use(express.static("public"))
 app.set("view engine","ejs")
 //路由表
 app.get("/"         ,mainctrl.showIndex)
-
+app.get("/:number"         ,mainctrl.showResult)
 app.listen(5000)

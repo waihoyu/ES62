@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>result</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
@@ -18,29 +18,29 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <div class="col-lg-12">
-                请输入数字：
-            </div>
-            <div class="col-lg-11">
-                <input type="text" class="form-control" id="shuzi">
-            </div>
-            <div class="col-lg-1">
-                <button type="button" class="btn btn-success" id="btn">查询</button>
-            </div>
+            <ol class="breadcrumb">
+                <li><a href="#">首页</a></li>
+                <li class="active"><a href="#">查询结果</a></li>
+            </ol>
+            <p> <%=number%>数字的因数如下：</p>
+            <ul>
+                <%
+                    for (let i = 0; i< result.length;i++){%>
+                        <li>
+                          <%=result[i]%>
+                        </li>
+
+                <%
+                    }
+                %>
+            </ul>
         </div>
     </div>
 </div>
 
 <script src="/js/jquery.min.js"></script>
 <script>
-    $("#btn").click(function () {
-        let number  = parseInt($("#shuzi").val())
-        if (number > 1000){
-            alert("太大了")
-            return
-        }
-        window.location= "/" + number
-    })
+
 </script>
 </body>
 </html>
