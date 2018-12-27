@@ -10,20 +10,22 @@ exports.showIndex = function (request,response) {
 exports.showResult = function (request,response) {
 
     let number = request.params.number
+    let  numberResult = []
     if (number > 10000){
         response.send("太大了")
     }
     file.read(number, function (result) {
         if (result == -1){
-            var result = math.calcfactor(number)
-            file.write(number,result,function (err) {
-
+            numberResult = math.calcfactor(number)
+            file.write(number,numberResult,function (err) {
+                console.log(err);
             })
-            console.log(result);
+            console.log(numberResult);
         }
-
+        // console.log(numberResult);
+        numberResult = result
         response.render("result",{
-            "result":result,
+            "numberResult":numberResult,
             "number":number
         })
     })
