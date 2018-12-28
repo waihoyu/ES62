@@ -1485,7 +1485,6 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 
 ##  Node  formidable     ejs  模板引擎
 
-
 ##  Node 
     call  和 apply  都是相同的 
        
@@ -1498,9 +1497,24 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 ## node express 复习  
 
 
+##  mongo 的安装和使用
+
+    read eval print loop
+    
+##  NodeJS结合mongo    
 
     
-    
+##  结合express做一个学生管理系统
+
+
+##  mongoose  
+
+
+## 创建模型model和schema
+
+
+
+
     
     
     
