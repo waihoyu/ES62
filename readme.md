@@ -1513,10 +1513,13 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 ## 创建模型model和schema
 
 
+## mongoose 静态方法，动态方法
 
 
+## 案例
+    封装一个方法，寻找有指定爱好的人
     
-    
+     简单的mongoose的查询功能，首先你要有一个数据库叫做xuesheng,然后有一个集合叫做banji1120 
     
     
     
