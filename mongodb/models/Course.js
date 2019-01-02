@@ -1,4 +1,5 @@
 
+
 var mongoose = require('mongoose')
 
 var courseSchma = new mongoose.Schema({
@@ -9,10 +10,16 @@ var courseSchma = new mongoose.Schema({
 
 courseSchma.statics.findCourseByid = function (cid,callback) {
     this.find({"cid": cid},function (err,results) {
-        console.log(cid);
         callback(results)
     })
 }
+
+courseSchma.methods.del = function (sid) {
+    var index = this.students.findIndex(function (item) {
+        return item == sid
+    })
+}
+
 //创建类
 var Course = mongoose.model("Course",courseSchma)
 module.exports = Course

@@ -1523,7 +1523,41 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
     
     
     
-    
-    
+## mongoose 的复习
+
+
+## 小小学生管理系统
+
+技术栈 node.js + express.js + ejs + mongodb + mongoose + bootstrap + jquery 
+
+
+## express-session
+
+## 选课报名系统的项目背景和需求
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
