@@ -42,10 +42,6 @@ function getUserByPromise() {
 }
 getUserByPromise();
 
-
-
-
-
 // function getUserByPromise() {
 //     fetchUser()
 //         .then((data) => {
