@@ -1518,26 +1518,22 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 
 
 ## 案例
+
     封装一个方法，寻找有指定爱好的人
     
-     简单的mongoose的查询功能，首先你要有一个数据库叫做xuesheng,然后有一个集合叫做banji1120 
-    
-    
+    简单的mongoose的查询功能，首先你要有一个数据库叫做xuesheng,然后有一个集合叫做banji1120 
     
 ## mongoose 的复习
 
 
 ## 小小学生管理系统
 
-技术栈 node.js + express.js + ejs + mongodb + mongoose + bootstrap + jquery 
-
+    技术栈 node.js + express.js + ejs + mongodb + mongoose + bootstrap + jquery 
 
 ## express-session
 
 
-
 ## 选课报名系统的项目背景和需求
-
 
 
 ## 单线程、异步、promise
@@ -1552,28 +1548,8 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 ##  diff 算法
 
 
-##
+##  react 
 
 
+##  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
