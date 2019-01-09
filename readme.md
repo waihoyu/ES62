@@ -1550,6 +1550,7 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 
 ##  diff 算法
 
+
 ##  组件的封装，封装视图、数据、变化逻辑
 
     组件的复用：props 传递 、复用
@@ -1566,12 +1567,14 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 ##   1000行代码实现react
 
 
+##  setState 
 
 
+## vue 三要素
 
+    响应式、模板引擎、渲染
 
-
-
+## vue 三要素
 
 
 
