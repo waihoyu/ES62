@@ -1564,7 +1564,7 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 
 
 
-##   1000行代码实现react
+##  1000行代码实现react
 
 
 ##  setState 
@@ -1574,7 +1574,18 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 
     响应式、模板引擎、渲染
 
-## vue 三要素
+##  render 函数 
+    vm._l
+    
+    todo-list demo 的render函数：
+    v-model 是怎么实现的
+    v-on:click 是怎么实现的
+    v-for是怎么实现的
+    
+## 
+
+
+
 
 
 
