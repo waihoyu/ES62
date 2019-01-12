@@ -1584,9 +1584,14 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
     
 ##  vue实现 的整个流程
 
+##  class js 构造函数
 
+## js构造函数
 
 ## 
+ 
+
+
 
 
 
