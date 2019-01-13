@@ -1581,6 +1581,8 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
     v-model 是怎么实现的
     v-on:click 是怎么实现的
     v-for是怎么实现的
+  
+  
     
 ##  vue实现 的整个流程
 
@@ -1594,7 +1596,15 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 
     this要在执行时才能确认值。
 
-##   
+##   作用域链
+
+
+##   异步和单线程
+
+
+## 其他知识 
+
+
 
 
 
