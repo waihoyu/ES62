@@ -1,3 +1,56 @@
+# 面试题集锦
+
+### 1. 使用apply实现bind方法
+
+    Function.prototype.bind = function(context){
+        //保存this，也就是调用bind的那个函数
+        var self = this;
+        var args = [].slice.call(arguments,1);
+        return function(){
+            //将第一次的参数与此次传入的参数合并，调用self函数
+            return self.apply(context,args.concat([].slice.call(arguments)));
+        }
+    }
+
+### 2. 用async实现一个list的顺序输出
+### 3. 用正则解析url
+### 4. 图片懒加载代码
+### 5. 优先队列
+### 6.找出【1000，990000】的所有对称数
+### 7.实现一个类方法的链式调用Human('Jack').eat().rest(5).go().sleep(10)
+### 8.实现函数A()，多次调用输出1，2，1，2。。。
+### 9.写一个发布订阅模式
+### 10.异步和同步
+### 11.js加载顺序
+### 12.多个数组合并去重排序
+### 13.一个div围绕着圆转圈
+### 14.两个有序数组的合并
+### 15.用数组实现一个栈
+### 16.自动化构建脚本-shell实现
+### 17.原生js写call
+### 18.科里化
+### 19.doctype
+### 20.git reset和rebase，soft和hard区别
+### 21.webpack
+### 22.给定两个数组，长度顺序内容都不知道，然后判断A是否等于B数组；
+### 23.事件代理如何判断点击的是哪个li
+### 24.闭包经典案例setTimeout
+### 25.http缓存
+### 26.js数组的所有方法
+### 27.css选择器优先级（很多父子元素的选择器混在一起怎么判断---不太明白意思）
+### 28.前端工程化
+### 29.基础知识：tcp/ip、http、js、css等
+### 30.两个算法题
+### 31.二分查找
+### 32.动态规划：给定一个自然数N，寻找所有连续自然数组合等于N的序列（如15==7+8，4+5+6，1+2+3+4+5）
+### 33.html，css很多问题
+### 34.promise打印
+### 35.rgba与opacity
+### 37.css和js的基础
+### 38.http协议以及缓存
+### 39.es6
+### 40.代码：数组扁平化（reduce），继承，斐波那契，升级具有缓存的斐波那契等等
+
 
 ##  ES6 的重要基础知识
 
@@ -1560,6 +1613,7 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
     jsx语法
     jsx解析成js
     独立的标准
+    
 ## JSX是如何解析的
 
 
@@ -1603,9 +1657,6 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 
 
 ## 其他知识 
-
-
-
 
 
 
