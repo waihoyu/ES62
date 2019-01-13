@@ -1588,8 +1588,13 @@ test:/\.(jpg|png|igt)$/,use:'url-loader?limit=8194''
 
 ## js构造函数
 
-## 
- 
+##   ES6其他常用功能
+
+##   执行上下文
+
+    this要在执行时才能确认值。
+
+##   
 
 
 

@@ -1,3 +1,5 @@
+
+
 function Animal() {
     this.eat = function () {
         console.log('Animal eat');
